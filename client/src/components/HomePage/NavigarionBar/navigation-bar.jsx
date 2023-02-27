@@ -24,7 +24,7 @@ export function NavigationBar() {
     <Styled>
       <NavItem>Login</NavItem>
       <NavItem>About</NavItem>
-      <NavItem>Contact</NavItem>
+      <NavItem>Contact</NavItem>1
     </Styled>
   );
 }
