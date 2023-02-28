@@ -39,10 +39,40 @@ height:25px;
 `;
 const LoginLabel = styled.label`
 margin:5px;
+font-size:15px;
 `;
 const LoginErrors = styled.div`
 margin:5px;
 color:red;
+`;
+
+const LoginWithGoogle = styled.div`
+ margin:5px;
+ font-size:18px;
+ color:navy;
+ font-weight:800;
+ cursor:pointer;
+`;
+const LoginForgotPass = styled.div`
+ margin:5px;
+ font-size:18px;
+ color:navy;
+ cursor:pointer;
+`;
+const LoginSignUpDiv = styled.div`
+text-align:center;
+margin:15px;
+padding:20px;
+border:none;
+border-radius:10px;
+box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+`;
+
+const LoginSignUpSpan = styled.span`
+color: #335652;
+font-weight:700;
+cursor:pointer;
 `;
 
 export function LoginForm() {
@@ -121,9 +151,9 @@ export function LoginForm() {
         )}
         </Formik>    
             
-          <div>Login with Google Account</div> 
-          <div>Forgot password?</div> 
-          <div>Don't have an account? <span>SignUp</span></div>
+          <LoginWithGoogle>Login with Google Account</LoginWithGoogle> 
+          <LoginForgotPass>Forgot password?</LoginForgotPass> 
+          <LoginSignUpDiv>Don't have an account? <LoginSignUpSpan>SignUp</LoginSignUpSpan></LoginSignUpDiv>
     </LoginCard>
   
   );
