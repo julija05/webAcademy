@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import image from "../../images/homeImage/Img.png";
-import { Formik } from 'formik';
 import { LoginForm } from './LoginForm/loginForm';
 
 const Wrapper = styled.div`
@@ -9,6 +8,7 @@ const Wrapper = styled.div`
  flex-direction:row;
  justify-content:center;
  align-items:center;
+ margin:20px;
 `;
 
 
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 export function HomePage() {
     return (
         <Wrapper>
-            <LoginForm></LoginForm>
+            <LoginForm/>
             <img src={image} alt={'learnnig people'} />
         </Wrapper>
     );
