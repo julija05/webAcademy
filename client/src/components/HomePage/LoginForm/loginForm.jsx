@@ -149,8 +149,7 @@ export function LoginForm() {
             </LoginWrapper>
         </form>
         )}
-        </Formik>    
-            
+        </Formik>  
           <LoginWithGoogle>Login with Google Account</LoginWithGoogle> 
           <LoginForgotPass>Forgot password?</LoginForgotPass> 
           <LoginSignUpDiv>Don't have an account? <LoginSignUpSpan>SignUp</LoginSignUpSpan></LoginSignUpDiv>
