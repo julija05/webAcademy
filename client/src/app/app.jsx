@@ -1,15 +1,13 @@
-import React, { Fragment } from 'react';
-import GlobalStyle from '../components/theme/globalStyle';
-import { NavigationBar } from 'components';
-import { HomePage } from 'components';
+import React, { useEffect  } from 'react';
+import { AppRouter } from '../routing/';
 
 function App() {
+  useEffect(() => {
+    document.title = "Multi page";
+  }, []);
+
   return (
-    <Fragment>
-    <GlobalStyle />
-    <NavigationBar  />
-    <HomePage/>
-  </Fragment>
+   <AppRouter/>
   );
 }
 
