@@ -1,6 +1,5 @@
-import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import sample from '../../images/homeImage/background-video.mp4';
+
 
 const GlobalStyle = createGlobalStyle`
 *{

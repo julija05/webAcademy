@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import logo from "../../../images/logosSvg/logo-no-background.svg"
+import logo from "../../../assets/images/logosSvg/logo-no-background.svg"
 
 const Styled = styled.div`
   display:flex;
