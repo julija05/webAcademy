@@ -1,7 +1,7 @@
 const cors = require('cors');
 const express = require('express');
 const mysql = require('mysql');
-
+require('dotenv').config();
 const app = express();
 
 const pool = mysql.createPool({
@@ -17,7 +17,7 @@ app.listen(process.env.REACT_APP_SERVER_PORT, () => {
   console.log(`App server now listening on port ${process.env.REACT_APP_SERVER_PORT}`);
 });
 
-app.get('/test', (req, res) => {
+app.get('/', (req, res) => {
   const { table } = req.query;
 
   pool.query(`select * from ${table}`, (err, results) => {

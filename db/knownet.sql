@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sampledb`
+-- Database: `knownet`
 --
 
 -- --------------------------------------------------------
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `sample`
 --
 
-CREATE TABLE `sample` (
+CREATE TABLE `knownetTest` (
   `id` int(255) NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -37,7 +37,7 @@ CREATE TABLE `sample` (
 -- Dumping data for table `sample`
 --
 
-INSERT INTO `sample` (`id`, `name`) VALUES
+INSERT INTO `knownetTest` (`id`, `name`) VALUES
 (1, 'Mercury'),
 (2, 'Venus'),
 (3, 'Earth'),
@@ -54,7 +54,7 @@ INSERT INTO `sample` (`id`, `name`) VALUES
 --
 -- Indexes for table `sample`
 --
-ALTER TABLE `sample`
+ALTER TABLE `knownetTest`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -64,7 +64,7 @@ ALTER TABLE `sample`
 --
 -- AUTO_INCREMENT for table `sample`
 --
-ALTER TABLE `sample`
+ALTER TABLE `knownetTest`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 

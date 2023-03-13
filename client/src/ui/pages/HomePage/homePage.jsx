@@ -14,7 +14,6 @@ export function HomePage() {
             </HomeText>
             <HomeButton>Start Learning Now &#8595;</HomeButton>    
             </TextWrapper>
-           
             <TextWrapper/>
         </Wrapper>
     );
