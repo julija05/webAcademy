@@ -6,12 +6,18 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin:0;
   }
-  
+  html{
+    width:100%;
+    height:100%;
+    padding: 0;
+    margin:0;
+  }
   body {
     padding: 0;
     margin:0;
-    background: linear-gradient(to right, #434343 0%, black 100%);
-    font-family: 'Life Savers', cursive;
+    font-family: 'Montserrat', sans-serif;
+    width:100%;
+    height:100%;
   }
 `;
 

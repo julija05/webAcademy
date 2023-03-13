@@ -1,45 +1,46 @@
 import React from 'react';
 import styled from "styled-components";
-import { Formik,Field } from 'formik';
+import { Formik } from 'formik';
 
 const HomeButton = styled.button`
 padding:15px;
-border-radius:20px;
+border-radius:34px;
 border:none;
 background-color:#335652;
 color:white;
-font-family: 'Life Savers', cursive;
+font-family: 'Montserrat', sans-serif;
 font-weight:800;
-margin:20px;
 font-size:20px;
+text-align:center;
+margin-bottom:20px;
 `;
 
 const LoginCard = styled.div`
 display:flex;
 flex-direction:column;
 background:#ffff;
-border-radius:10px;
+width:30%;
 `;
 const HomeText = styled.div`
 font-size:25px;
-color: #335652;
-margin:30px;
+color: black;
 font-weight:700;
+text-align:left;
+margin-bottom:20px;
 `;
 
 const LoginWrapper = styled.div`
 display:flex;
 flex-direction:column;
-margin:10px
 `;
 
 const LoginInput = styled.input`
-margin:5px;
-height:25px;
+height:50px;
+margin-bottom:20px;
 `;
 const LoginLabel = styled.label`
-margin:5px;
 font-size:15px;
+font-weight:700;
 `;
 const LoginErrors = styled.div`
 margin:5px;
@@ -47,32 +48,34 @@ color:red;
 `;
 
 const LoginWithGoogle = styled.div`
- margin:5px;
- font-size:18px;
+ font-size:20px;
  color:navy;
  font-weight:800;
  cursor:pointer;
+ padding:15px;
+ border-radius:34px;
+ color:black;
+ border:1px solid black;
+ text-align:center;
+ margin-bottom:20px;
 `;
 const LoginForgotPass = styled.div`
- margin:5px;
  font-size:18px;
- color:navy;
+ color:black;
  cursor:pointer;
+ margin-bottom:20px;
+ font-weight:700;
 `;
 const LoginSignUpDiv = styled.div`
-text-align:center;
-margin:15px;
-padding:20px;
-border:none;
-border-radius:10px;
-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
-0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-`;
-
-const LoginSignUpSpan = styled.span`
-color: #335652;
-font-weight:700;
-cursor:pointer;
+font-size:20px;
+ color:white;
+ font-weight:800;
+ cursor:pointer;
+ padding:15px;
+ border-radius:34px;
+ color:white;
+ background-color:#FF6584;
+ text-align:center;
 `;
 
 export function LoginForm() {
@@ -137,22 +140,17 @@ export function LoginForm() {
             <LoginErrors>
             {errors.password && touched.password && errors.password}
             </LoginErrors>
-            
-            <LoginLabel>
-            <Field type="checkbox" name="toggle" />
-             Remeber login info
-            </LoginLabel>
-            
             <HomeButton type="submit" disabled={isSubmitting}>
-            Login
+            Sign In
             </HomeButton>
             </LoginWrapper>
         </form>
         )}
-        </Formik>  
-          <LoginWithGoogle>Login with Google Account</LoginWithGoogle> 
-          <LoginForgotPass>Forgot password?</LoginForgotPass> 
-          <LoginSignUpDiv>Don't have an account? <LoginSignUpSpan>SignUp</LoginSignUpSpan></LoginSignUpDiv>
+        </Formik> 
+        <LoginForgotPass>Forgot password?</LoginForgotPass>  
+          <LoginWithGoogle>Sign In with Google Account</LoginWithGoogle> 
+        
+          <LoginSignUpDiv>Join Now</LoginSignUpDiv>
     </LoginCard>
   
   );
