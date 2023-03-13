@@ -3,7 +3,7 @@ import { AppRouter } from '../routing/';
 
 function App() {
   useEffect(() => {
-    document.title = "Multi page";
+    document.title = "Knownet";
   }, []);
 
   return (

@@ -1,24 +1,23 @@
 version: "3.4"
 
-x-common-variables: &common-variables
-  MYSQL_USER: sampleuser
-  MYSQL_PASSWORD: samplepassword
-  MYSQL_DATABASE: sampledb
-  REACT_APP_SERVER_PORT: 8000
+x-common-variables:
+  MYSQL_USER: ${MYSQL_USER}
+  MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+  MYSQL_DATABASE: ${MYSQL_DATABASE}
+  REACT_APP_SERVER_PORT: ${REACT_APP_SERVER_PORT}
 
 services:
   mysql-db:
-    image: mysql:5.7
+    image: mysql:${MYSQL_VERSION}
     container_name: mysql_web
     environment:
-      <<: *common-variables
-      MYSQL_HOST: localhost
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - 3306:3306
     restart: unless-stopped
     volumes:
-      - ./db/sample.sql:/docker-entrypoint-initdb.d/sample.sql
+      - ./db/knownet.sql:/docker-entrypoint-initdb.d/knownet.sql
   phpmyadmin:
     depends_on:
       - mysql-db
@@ -37,8 +36,7 @@ services:
     depends_on:
       - mysql-db
     environment:
-      <<: *common-variables
-      MYSQL_HOST_IP: mysql-db
+      MYSQL_HOST_IP: ${MYSQL_HOST_IP}
     ports:
       - 8000:8000
     volumes:
@@ -50,8 +48,7 @@ services:
     build: ./client
     container_name: client_container_web
     environment:
-      <<: *common-variables
-      NODE_PATH: src
+      NODE_PATH: ${NODE_PATH}
     ports:
       - 3000:3000
     volumes:

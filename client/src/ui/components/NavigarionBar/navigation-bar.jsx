@@ -1,6 +1,9 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
+import { ABOUT, HOME } from '../../../routing/routes';
 import styled from "styled-components";
 import logo from "../../../assets/images/logosSvg/logo-no-background.svg"
+import { useLocation } from "react-router-dom";
 
 const Styled = styled.div`
   display:flex;
@@ -12,11 +15,12 @@ const Styled = styled.div`
   font-weight:700;
   background:rgba(0,0,0,0.3);
 `;
-const NavWrapper = styled.div`
+const NavWrapper = styled.ul`
   display:flex;
   justify-content:center;
+  list-style:none;
 `;
-const NavItem = styled.a`
+const NavItem = styled.li`
   margin:48px;
   cursor:pointer;
   font-weight:800;
@@ -24,20 +28,29 @@ const NavItem = styled.a`
   &:hover {
     text-decoration: underline;
 }
+  &::after {
+    text-decoration: underline;
+    color:white
+  }
 `;
 
 const Logo = styled.img`
   width:200px;
-
 `;
 
 export function NavigationBar() {
+  const location = useLocation();
+  const { pathname } = location;
+  const splitLocation = pathname.split("/");
+
   return (
     <Styled>
-      <Logo src={logo} alt={'knownet logo'} />
+     <NavLink to={HOME}><Logo src={logo} alt={'knownet logo'} /></NavLink> 
       <NavWrapper>
       <NavItem>Login</NavItem>
-      <NavItem>About</NavItem>
+      <NavItem><NavLink  className={
+                    splitLocation[1] === "" ? "active nav-link" : "nav-link"
+                  } to={ABOUT}>About</NavLink></NavItem>
       <NavItem>Popular</NavItem>
       <NavItem>News</NavItem>
       </NavWrapper>
